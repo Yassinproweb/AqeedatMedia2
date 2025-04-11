@@ -584,6 +584,10 @@ video {
   bottom: 0px;
 }
 
+.bottom-24{
+  bottom: 6rem;
+}
+
 .bottom-5{
   bottom: 1.25rem;
 }
@@ -610,6 +614,22 @@ video {
 
 .top-20{
   top: 5rem;
+}
+
+.bottom-48{
+  bottom: 12rem;
+}
+
+.bottom-10{
+  bottom: 2.5rem;
+}
+
+.bottom-28{
+  bottom: 7rem;
+}
+
+.bottom-14{
+  bottom: 3.5rem;
 }
 
 .z-\[1000\]{
@@ -700,6 +720,11 @@ video {
 .size-24{
   width: 6rem;
   height: 6rem;
+}
+
+.size-8{
+  width: 2rem;
+  height: 2rem;
 }
 
 .h-1\.5{
@@ -823,6 +848,10 @@ video {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-clip{
+  overflow: clip;
 }
 
 .rounded{
@@ -1177,8 +1206,16 @@ video {
   outline-offset: 0px;
 }
 
+.outline-offset-2{
+  outline-offset: 2px;
+}
+
 .outline-shade{
   outline-color: hsl(137, 49%, 21%);
+}
+
+.outline-white{
+  outline-color: #fff;
 }
 
 .anim-paused{
