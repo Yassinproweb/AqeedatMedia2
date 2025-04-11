@@ -29,7 +29,7 @@ const sheikhs = document.getElementById("sheikhs");
 
 // fetching data from data.json file - Sheikhs’ data
 async function fetchData() {
-  const res = await fetch("/data.json");
+  const res = await fetch("/public/data.json");
   const data = await res.json();
 
   data.forEach(dta => {
@@ -75,7 +75,7 @@ const trending = document.getElementById("trending");
 
 // fetching audios from trending.json file
 async function fetchAudio() {
-  const res = await fetch("/trending.json");
+  const res = await fetch("/public/trending.json");
   const audios = await res.json();
 
   audios.forEach(audio => {
@@ -127,7 +127,7 @@ const topic = document.getElementById("series");
 
 // fetching audios from series.json file
 async function fetchSeries() {
-  const res = await fetch("/series.json");
+  const res = await fetch("/public/series.json");
   const series = await res.json();
 
   series.forEach(serie => {
