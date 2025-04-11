@@ -1,0 +1,210 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aqeedah Awwalan</title>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/imgs/Aqeedah.png">
+
+  <!-- link to css file -->
+  <link rel="stylesheet" href="/public/style.css">
+
+  <!-- hugeicons -->
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
+</head>
+
+<body>
+  <header class="sticky top-0 left-0 items-center justify-between pb-1.5 z-[1000]">
+    <img src="/public/imgs/Aqeedah.png" alt="Aqeedat Media logo" class="w-16">
+
+    <div class="w-fit items-center justify-end text-4xl text-green font-bold">
+      <button id="menu-o" class="hgi hgi-stroke hgi-menu-04"></button>
+      <button id="menu-c" class="hidden hgi hgi-stroke hgi-cancel-01"></button>
+    </div>
+
+    <nav
+      class="hidden fixed top-20 right-7 w-fit flex-col items-start justify-start px-7 py-11 shadow-lg shadow-green/15 rounded-2xl bg-white text-green">
+      <a href="/" class="hover:opacity-70">Home</a>
+      <a href="/public/sheikhs.html" class="hover:opacity-70">Sheikhs</a>
+      <a href="/public/about.html" class="hover:opacity-70">About</a>
+      <a href="/public/donate.html" class="hover:opacity-70">Donate</a>
+    </nav>
+  </header>
+
+  <main id="home" class="flex-col items-start justify-start gap-7">
+    <section class="w-full flex-col items-start justify-start gap-1.5 bg-green px-pw py-11">
+      <h1 class="text-4xl text-white text-start font-bold capitalize">listen learn & enjoy!</h1>
+      <p class="text-white/75">Listen and Learn Islamic Religion in Luganda taught to you by our Ugandan Sheikhs.</p>
+
+      <div
+        class="relative w-full items-center justify-between gap-0 mt-7 rounded-lg outline outline-4 outline-offset-0 outline-shade bg-white">
+        <input type="search" name="search" id="search"
+          class="w-[90%] text-base text-shade px-5 py-4 outline-none border-none rounded-l-lg placeholder:text-shade/65"
+          placeholder="Search here...">
+        <span class="size-14"></span>
+        <button
+          class="search hgi hgi-stroke hgi-search-01 absolute right-0 size-14 flex-shrink-0 text-3xl text-white font-bold bg-shade"></button>
+      </div>
+    </section>
+
+    <section class="w-full flex-col items-start justify-start gap-3 px-pw">
+      <h2 class="text-3xl text-green font-bold capitalize">Our Sheikhs</h2>
+      <div id="sheikhs" class="w-full grid grid-flow-row gap-5"></div>
+
+      <div class="w-full flex-col items-start justify-start gap-7 mt-11">
+        <h3 class="text-3xl text-shade font-bold capitalize">Trending audios</h3>
+
+        <div id="trending" class="w-full grid grid-flow-row gap-5"></div>
+      </div>
+
+      <div class="w-full flex-col items-start justify-start gap-7 mt-11">
+        <h3 class="text-3xl text-shade font-bold capitalize">Top Series</h3>
+
+        <div id="series" class="w-full grid grid-flow-row gap-5"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="float-play"
+    class="fixed bottom-5 right-5 size-24 hidden items-center justify-center rounded-full shadow-lg shadow-green/10 z-[100] bg-transparent overflow-hidden">
+    <div class="relative w-full h-full items-center justify-center p-3.5">
+      <div id="spinner"
+        class="absolute top-0 left-0 w-full h-full animate-spin anim-paused bg-gradient-to-r from-green via-shade to-red">
+      </div>
+      <button id="hgi-play"
+        class="hgi hgi-stroke hgi-play text-3xl text-green w-full aspect-square flex items-center justify-center rounded-full bg-white"></button>
+    </div>
+  </div>
+
+  <div id="playing" class="hidden w-full min-h-svh flex-col items-center justify-start gap-11 pt-7 paused main">
+    <div class="w-full items-center justify-between gap-3">
+      <button id="arrow-back"
+        class="size-14 hgi hgi-stroke hgi-arrow-down-01 text-3xl text-white bg-red rounded-xl flex-shrink-0"></button>
+      <div class="w-full flex-col items-center justify-center gap-1.5">
+        <h3 class="text-base text-center text-green font-bold line-clamp-1 w-full capitalize">now playing</h3>
+        <p class="text-xs text-black/45 text-center capitalize">Aqeedah Awwalan</p>
+      </div>
+      <a href="/sheikhs.html"
+        class="size-14 hgi hgi-stroke hgi-playlist-03 flex items-center justify-center text-3xl text-white bg-green rounded-xl flex-shrink-0"></a>
+    </div>
+    <div class="w-full flex-col items-start justify-center gap-5">
+      <div class="relative w-full flex-col items-center justify-center px-3 gap-7">
+        <img src="" alt="audio thumbnail" id="audio-thumb"
+          class="w-full aspect-[4/2.75] object-cover object-center rounded-xl shadow-lg shadow-green/15">
+      </div>
+    </div>
+    <div class="w-full flex-col items-center justify-center gap-5">
+      <div class="w-full flex-col items-center justify-center">
+        <h5 id="audio-title" class="text-lg text-green text-center font-bold line-clamp-1 capitalize"></h5>
+        <p id="audio-sheikh" class="text-black/55"></p>
+      </div>
+      <div class="w-full flex-col items-center justify-center gap-1.5">
+        <div id="progress-bar" class="relative w-full h-1.5 rounded bg-shade/35 overflow-hidden">
+          <div id="progress-details"
+            class="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-green via-green/65 to-red">
+          </div>
+        </div>
+        <div class="w-full items-center justify-between px-1">
+          <p id="play-start" class="text-sm text-red font-medium">--:--</p>
+          <p id="play-final" role="button" class="text-sm text-green font-medium">-:--:--</p>
+        </div>
+        <div class="w-full items-center justify-between gap-2">
+          <button id="timer" class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+            <i class="hgi hgi-stroke hgi-time-quarter"></i>
+          </button>
+          <button id="hgi-previous"
+            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+            <i class="hgi hgi-stroke hgi-previous"></i>
+          </button>
+          <button id="backwards"
+            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+            <i class="hgi hgi-stroke hgi-go-backward-15-sec"></i>
+          </button>
+          <button id="play-pause" class="text-2xl flex items-center justify-center size-16 rounded-full bg-red">
+            <i id="play-pause-btn" class="hgi hgi-stroke hgi-play text-white"></i>
+          </button>
+          <button id="forwards"
+            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+            <i class="hgi hgi-stroke hgi-go-forward-15-sec"></i>
+          </button>
+          <button id="hgi-next"
+            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+            <i class="hgi hgi-stroke hgi-next"></i>
+          </button>
+          <button class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center shuffle">
+            <i id="repeat" class="hgi hgi-stroke hgi-repeat"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <audio src="/audio/sitaane.m4a" id="now-playing"></audio>
+  </div>
+
+  <footer class="w-full flex-col items-start justify-start gap-7 bg-shade">
+    <div class="w-full flex-col items-start justify-start gap-7">
+      <div class="w-full flex-col items-start justify-start gap-2">
+        <h3 class="text-2xl text-white font-bold">Aqeedat Media</h3>
+        <p class="text-white/65">Here at Aqeedat media we make sure you receive Islamic educational lectures delivered
+          by Ugandan students of knowledge.</p>
+      </div>
+      <div class="w-full flex-col items-start justify-start gap-2">
+        <h3 class="text-2xl text-white font-bold">Contact Us</h3>
+        <div class="w-full flex-col items-start justify-start gap-2.5 text-white">
+          <a href="mailto:info@aqeedatmedia.com"
+            class="inline-flex items-center justify-start gap-3 hover:tracking-wide">
+            <i class="hgi hgi-stroke hgi-mail-02 text-3xl font-semibold"></i>
+            <span class="text-base">info@aqeedatmedia.com</span>
+          </a>
+          <a href="tel:+447983869372" class="inline-flex items-center justify-start gap-3 hover:tracking-wide">
+            <i class="hgi hgi-stroke hgi-calling text-2xl font-bold"></i>
+            <span class="text-base">+44-798 3869 372</span>
+          </a>
+          <a href="tel:+256752172141" class="inline-flex items-center justify-start gap-3 hover:tracking-wide">
+            <i class="hgi hgi-stroke hgi-calling text-2xl font-bold"></i>
+            <span class="text-base">+256-752 172 141</span>
+          </a>
+          <a href="tel:+967773925056" class="inline-flex items-center justify-start gap-3 hover:tracking-wide">
+            <i class="hgi hgi-stroke hgi-calling text-2xl font-bold"></i>
+            <span class="text-base">+967-773 925 056</span>
+          </a>
+          <a href="tel:+256758272635" class="inline-flex items-center justify-start gap-3 hover:tracking-wide">
+            <i class="hgi hgi-stroke hgi-calling text-2xl font-bold"></i>
+            <span class="text-base">+256-758 272 635</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full flex-col items-start justify-start gap-2.5">
+        <h3 class="text-2xl text-white font-bold">Get Involved</h3>
+        <p class="text-base text-white/65">Enjoy more with our mobile app available on both platforms</p>
+        <div class="w-full items-center justify-between mt-5 text-white">
+          <a href="https://play.google.com/store/apps/datasafety?id=com.kimdeveloper.aqeedatmedia&hl=en" target="_blank"
+            class="w-fit inline-flex items-center justify-start gap-2">
+            <i class="hgi hgi-stroke hgi-play-store text-4xl"></i>
+            <span class="text-base font-semibold">Google PlayStore</span>
+          </a>
+          <a href="https://apps.apple.com/us/app/aqeedat-media/id6654924847" target="_blank"
+            class="w-fit inline-flex items-center justify-start gap-2">
+            <i class="hgi hgi-stroke hgi-app-store text-4xl"></i>
+            <span class="text-base font-semibold">Apple AppStore</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full flex-col items-center justify-center gap-2">
+      <span class="w-full h-px mb-9 bg-white/35"></span>
+      <p class="w-full text-center text-base text-white">All Rights Reserved &copy;Aqeedat_Media <span id="date"></span>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/script.js"></script>
+</body>
+
+</html>
