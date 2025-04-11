@@ -216,26 +216,26 @@ let duruus = [
   {
     title: "Abaffe! Sitaane erina obuyinza ku muntu?",
     sheikh: "Shk. Muhammad Quraysh Mazinga",
-    img: "/imgs/thumb1.jpg",
-    dars: "/audio/sitaane.m4a"
+    img: "/public/imgs/thumb1.jpg",
+    dars: "/public/audio/sitaane.m4a"
   },
   {
     title: "Omuntu agezeseddwa n'eddogo akola atya?",
     sheikh: "Shk. Hamzah Kayiira",
-    img: "/imgs/thumb2.jpg",
-    dars: "/audio/eddogo.mp3"
+    img: "/public/imgs/thumb2.jpg",
+    dars: "/public/audio/eddogo.mp3"
   },
   {
     title: "Ebituufu ku kiro kya Laylat Al-Qadr",
     sheikh: "Shk. Hamzah Muwonge",
-    img: "/imgs/thumb3.jpg",
-    dars: "/audio/darsu.aac"
+    img: "/public/imgs/thumb3.jpg",
+    dars: "/public/audio/darsu.aac"
   },
   {
     title: "Tafsīr Sūratul Kahf - Part 60",
     sheikh: "Shk. Abdu-Rrahmaan Mukisa",
-    img: "/imgs/thumb4.jpg",
-    dars: "/audio/tafsir.mp3"
+    img: "/public/imgs/thumb4.jpg",
+    dars: "/public/audio/tafsir.mp3"
   }
 ]
 
