@@ -19,19 +19,19 @@
 
 <body>
   <header class="sticky top-0 left-0 items-center justify-between pb-1.5 z-[1000]">
-    <img src="/imgs/Aqeedah.png" alt="Aqeedat Media logo" class="w-16">
+    <img src="/public/imgs/Aqeedah.png" alt="Aqeedat Media logo" class="w-16">
 
-    <div class="w-fit items-center justify-end text-4xl text-green font-bold">
+    <div class="w-fit items-center justify-end text-4xl text-green font-bold lg:hidden">
       <button id="menu-o" class="hgi hgi-stroke hgi-menu-04"></button>
       <button id="menu-c" class="hidden hgi hgi-stroke hgi-cancel-01"></button>
     </div>
 
     <nav
-      class="hidden fixed top-20 right-7 w-fit flex-col items-start justify-start px-7 py-11 shadow-lg shadow-green/15 rounded-2xl bg-white text-green">
+      class="hidden fixed top-20 right-7 w-fit flex-col items-start justify-start px-7 py-11 shadow-lg shadow-green/15 rounded-2xl bg-white text-green lg:flex lg:relative lg:flex-row lg:items-center lg:justify-end lg:gap-3.5 lg:p-0 lg:top-0 lg:right-0 lg:shadow-none lg:bg-transparent">
       <a href="/" class="hover:opacity-70">Home</a>
-      <a href="/shekhs.html" class="hover:opacity-70">Sheikhs</a>
-      <a href="/about.html" class="hover:opacity-70">About</a>
-      <a href="/donate.html" class="hover:opacity-70">Donate</a>
+      <a href="/public/sheikhs.html" class="hover:opacity-70">Sheikhs</a>
+      <a href="/public/about.html" class="hover:opacity-70">About</a>
+      <a href="/public/donate.html" class="hover:opacity-70">Donate</a>
     </nav>
   </header>
 
@@ -298,7 +298,7 @@
   </main>
 
   <footer class="w-full flex-col items-start justify-start gap-7 bg-shade">
-    <div class="w-full flex-col items-start justify-start gap-7">
+    <div class="w-full flex-col items-start justify-start gap-7 xl:flex-row xl:justify-between">
       <div class="w-full flex-col items-start justify-start gap-2">
         <h3 class="text-2xl text-white font-bold">Aqeedat Media</h3>
         <p class="text-white/65">Here at Aqeedat media we make sure you receive Islamic educational lectures delivered
@@ -331,17 +331,17 @@
         </div>
       </div>
 
-      <div class="w-full flex-col items-start justify-start gap-2.5">
+      <div class="w-full flex-col items-start justify-start gap-2.5 xl:items-end">
         <h3 class="text-2xl text-white font-bold">Get Involved</h3>
-        <p class="text-base text-white/65">Enjoy more with our mobile app available on both platforms</p>
-        <div class="w-full items-center justify-between mt-5 text-white">
+        <p class="text-base text-white/65 xl:text-end">Enjoy more with our mobile app available on both platforms</p>
+        <div class="w-full items-center justify-between mt-5 text-white xl:justify-end">
           <a href="https://play.google.com/store/apps/datasafety?id=com.kimdeveloper.aqeedatmedia&hl=en" target="_blank"
-            class="w-fit inline-flex items-center justify-start gap-2">
+            class="w-fit inline-flex items-center justify-start gap-2 xl:justify-end">
             <i class="hgi hgi-stroke hgi-play-store text-4xl"></i>
             <span class="text-base font-semibold">Google PlayStore</span>
           </a>
           <a href="https://apps.apple.com/us/app/aqeedat-media/id6654924847" target="_blank"
-            class="w-fit inline-flex items-center justify-start gap-2">
+            class="w-fit inline-flex items-center justify-start gap-2 xl:justify-end">
             <i class="hgi hgi-stroke hgi-app-store text-4xl"></i>
             <span class="text-base font-semibold">Apple AppStore</span>
           </a>

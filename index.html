@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=1080">
   <title>Aqeedah Awwalan</title>
 
   <!-- favicon -->
@@ -20,13 +21,13 @@
   <header class="sticky top-0 left-0 items-center justify-between pb-1.5 z-[1000]">
     <img src="/public/imgs/Aqeedah.png" alt="Aqeedat Media logo" class="w-16">
 
-    <div class="w-fit items-center justify-end text-4xl text-green font-bold">
+    <div class="w-fit items-center justify-end text-4xl text-green font-bold lg:hidden">
       <button id="menu-o" class="hgi hgi-stroke hgi-menu-04"></button>
       <button id="menu-c" class="hidden hgi hgi-stroke hgi-cancel-01"></button>
     </div>
 
     <nav
-      class="hidden fixed top-20 right-7 w-fit flex-col items-start justify-start px-7 py-11 shadow-lg shadow-green/15 rounded-2xl bg-white text-green">
+      class="hidden fixed top-20 right-7 w-fit flex-col items-start justify-start px-7 py-11 shadow-lg shadow-green/15 rounded-2xl bg-white text-green lg:flex lg:relative lg:flex-row lg:items-center lg:justify-end lg:gap-3.5 lg:p-0 lg:top-0 lg:right-0 lg:shadow-none lg:bg-transparent">
       <a href="/" class="hover:opacity-70">Home</a>
       <a href="/public/sheikhs.html" class="hover:opacity-70">Sheikhs</a>
       <a href="/public/about.html" class="hover:opacity-70">About</a>
@@ -52,7 +53,7 @@
 
     <section class="w-full flex-col items-start justify-start gap-3 px-pw">
       <h2 class="text-3xl text-green font-bold capitalize">Our Sheikhs</h2>
-      <div id="sheikhs" class="w-full grid grid-flow-row gap-5"></div>
+      <div id="sheikhs" class="w-full grid grid-flow-row gap-5 lg:grid-cols-2 lg:grid xl:grid-cols-3"></div>
 
       <div class="w-full flex-col items-start justify-start gap-7 mt-11">
         <h3 class="text-3xl text-shade font-bold capitalize">Trending audios</h3>
@@ -79,73 +80,83 @@
     </div>
   </div>
 
-  <div id="playing" class="hidden w-full min-h-svh flex-col items-center justify-start gap-11 pt-7 paused main">
-    <div class="w-full items-center justify-between gap-3">
-      <button id="arrow-back"
-        class="size-14 hgi hgi-stroke hgi-arrow-down-01 text-3xl text-white bg-red rounded-xl flex-shrink-0"></button>
-      <div class="w-full flex-col items-center justify-center gap-1.5">
-        <h3 class="text-base text-center text-green font-bold line-clamp-1 w-full capitalize">now playing</h3>
-        <p class="text-xs text-black/45 text-center capitalize">Aqeedah Awwalan</p>
+
+  <main id="playing" class="hidden w-full max-h-lvh flex-col items-center justify-start gap-11 pt-7 paused main">
+    <div class="w-full h-full flex-col items-center justify-start gap-11">
+      <div class="w-full items-center justify-between gap-3">
+        <button id="arrow-back"
+          class="size-14 hgi hgi-stroke hgi-arrow-down-01 text-3xl text-white bg-red rounded-xl flex-shrink-0"></button>
+        <div class="w-full flex-col items-center justify-center gap-1.5">
+          <h3 class="text-base text-center text-green font-bold line-clamp-1 w-full capitalize">now playing</h3>
+          <p class="text-xs text-black/45 text-center capitalize">Aqeedah Awwalan</p>
+        </div>
+        <a href="/public/sheikhs.html"
+          class="size-14 hgi hgi-stroke hgi-playlist-03 flex items-center justify-center text-3xl text-white bg-green rounded-xl flex-shrink-0"></a>
       </div>
-      <a href="/public/sheikhs.html"
-        class="size-14 hgi hgi-stroke hgi-playlist-03 flex items-center justify-center text-3xl text-white bg-green rounded-xl flex-shrink-0"></a>
-    </div>
-    <div class="w-full flex-col items-start justify-center gap-5">
-      <div class="relative w-full flex-col items-center justify-center px-3 gap-7">
-        <img src="" alt="audio thumbnail" id="audio-thumb"
-          class="w-full aspect-[4/2.75] object-cover object-center rounded-xl shadow-lg shadow-green/15">
+      <div class="w-full flex-col items-start justify-center gap-5">
+        <div class="relative w-full flex-col items-center justify-center px-3 gap-7">
+          <img src="" alt="audio thumbnail" id="audio-thumb"
+            class="w-full aspect-[4/2.75] object-cover object-center rounded-xl shadow-lg shadow-green/15">
+        </div>
       </div>
-    </div>
-    <div class="w-full flex-col items-center justify-center gap-5">
-      <div class="w-full flex-col items-center justify-center">
-        <h5 id="audio-title" class="text-lg text-green text-center font-bold line-clamp-1 capitalize"></h5>
-        <p id="audio-sheikh" class="text-black/55"></p>
-      </div>
-      <div class="w-full flex-col items-center justify-center gap-1.5">
-        <div id="progress-bar" class="relative w-full h-1.5 rounded bg-shade/35 overflow-hidden">
-          <div id="progress-details"
-            class="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-green via-green/65 to-red">
+      <div class="w-full flex-col items-center justify-center gap-5">
+        <div class="w-full flex-col items-center justify-center">
+          <h5 id="audio-title" class="text-lg text-green text-center font-bold line-clamp-1 capitalize"></h5>
+          <p id="audio-sheikh" class="text-black/55"></p>
+        </div>
+        <div class="w-full flex-col items-center justify-center gap-1.5">
+          <div id="progress-bar" class="relative w-full h-1.5 rounded bg-shade/35 overflow-hidden">
+            <div id="progress-details"
+              class="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-green via-green/65 to-red">
+            </div>
+          </div>
+          <div class="w-full items-center justify-between px-1">
+            <p id="play-start" class="text-sm text-red font-medium">--:--</p>
+            <p id="play-final" role="button" class="text-sm text-green font-medium">-:--:--</p>
+          </div>
+          <div class="w-full items-center justify-between gap-2">
+            <button id="timer"
+              class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+              <i class="hgi hgi-stroke hgi-time-quarter"></i>
+            </button>
+            <button id="hgi-previous"
+              class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+              <i class="hgi hgi-stroke hgi-previous"></i>
+            </button>
+            <button id="backwards"
+              class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+              <i class="hgi hgi-stroke hgi-go-backward-15-sec"></i>
+            </button>
+            <button id="play-pause" class="text-2xl flex items-center justify-center size-16 rounded-full bg-red">
+              <i id="play-pause-btn" class="hgi hgi-stroke hgi-play text-white"></i>
+            </button>
+            <button id="forwards"
+              class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+              <i class="hgi hgi-stroke hgi-go-forward-15-sec"></i>
+            </button>
+            <button id="hgi-next"
+              class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
+              <i class="hgi hgi-stroke hgi-next"></i>
+            </button>
+            <button class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center shuffle">
+              <i id="repeat" class="hgi hgi-stroke hgi-repeat"></i>
+            </button>
           </div>
         </div>
-        <div class="w-full items-center justify-between px-1">
-          <p id="play-start" class="text-sm text-red font-medium">--:--</p>
-          <p id="play-final" role="button" class="text-sm text-green font-medium">-:--:--</p>
-        </div>
-        <div class="w-full items-center justify-between gap-2">
-          <button id="timer" class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
-            <i class="hgi hgi-stroke hgi-time-quarter"></i>
-          </button>
-          <button id="hgi-previous"
-            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
-            <i class="hgi hgi-stroke hgi-previous"></i>
-          </button>
-          <button id="backwards"
-            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
-            <i class="hgi hgi-stroke hgi-go-backward-15-sec"></i>
-          </button>
-          <button id="play-pause" class="text-2xl flex items-center justify-center size-16 rounded-full bg-red">
-            <i id="play-pause-btn" class="hgi hgi-stroke hgi-play text-white"></i>
-          </button>
-          <button id="forwards"
-            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
-            <i class="hgi hgi-stroke hgi-go-forward-15-sec"></i>
-          </button>
-          <button id="hgi-next"
-            class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center">
-            <i class="hgi hgi-stroke hgi-next"></i>
-          </button>
-          <button class="size-10 text-red text-2xl rounded-full bg-red/15 flex items-center justify-center shuffle">
-            <i id="repeat" class="hgi hgi-stroke hgi-repeat"></i>
-          </button>
-        </div>
       </div>
+
+      <audio src="/public/audio/sitaane.m4a" id="now-playing"></audio>
     </div>
 
-    <audio src="/public/audio/sitaane.m4a" id="now-playing"></audio>
-  </div>
+    <div class="w-full h-full flex-col items-center justify-start gap-7 p-7 overflow-y-scroll">
+      <h3 class="text-3xl text-shade font-bold capitalize">More in Playlist</h3>
+
+      <div id="rendering" class="w-full grid grid-flow-row gap-5"></div>
+    </div>
+  </main>
 
   <footer class="w-full flex-col items-start justify-start gap-7 bg-shade">
-    <div class="w-full flex-col items-start justify-start gap-7">
+    <div class="w-full flex-col items-start justify-start gap-7 xl:flex-row xl:justify-between">
       <div class="w-full flex-col items-start justify-start gap-2">
         <h3 class="text-2xl text-white font-bold">Aqeedat Media</h3>
         <p class="text-white/65">Here at Aqeedat media we make sure you receive Islamic educational lectures delivered
@@ -178,17 +189,17 @@
         </div>
       </div>
 
-      <div class="w-full flex-col items-start justify-start gap-2.5">
+      <div class="w-full flex-col items-start justify-start gap-2.5 xl:items-end">
         <h3 class="text-2xl text-white font-bold">Get Involved</h3>
-        <p class="text-base text-white/65">Enjoy more with our mobile app available on both platforms</p>
-        <div class="w-full items-center justify-between mt-5 text-white">
+        <p class="text-base text-white/65 xl:text-end">Enjoy more with our mobile app available on both platforms</p>
+        <div class="w-full items-center justify-between mt-5 text-white xl:justify-end">
           <a href="https://play.google.com/store/apps/datasafety?id=com.kimdeveloper.aqeedatmedia&hl=en" target="_blank"
-            class="w-fit inline-flex items-center justify-start gap-2">
+            class="w-fit inline-flex items-center justify-start gap-2 xl:justify-end">
             <i class="hgi hgi-stroke hgi-play-store text-4xl"></i>
             <span class="text-base font-semibold">Google PlayStore</span>
           </a>
           <a href="https://apps.apple.com/us/app/aqeedat-media/id6654924847" target="_blank"
-            class="w-fit inline-flex items-center justify-start gap-2">
+            class="w-fit inline-flex items-center justify-start gap-2 xl:justify-end">
             <i class="hgi hgi-stroke hgi-app-store text-4xl"></i>
             <span class="text-base font-semibold">Apple AppStore</span>
           </a>
