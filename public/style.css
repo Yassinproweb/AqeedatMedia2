@@ -861,6 +861,10 @@ video {
   border-radius: 0.75rem;
 }
 
+.rounded-3xl{
+  border-radius: 1.5rem;
+}
+
 .rounded-l-lg{
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -870,12 +874,21 @@ video {
   border-width: 1px;
 }
 
+.border-2{
+  border-width: 2px;
+}
+
 .border-none{
   border-style: none;
 }
 
 .border-green\/15{
   border-color: hsl(137 69% 27% / 0.15);
+}
+
+.border-shade{
+  --tw-border-opacity: 1;
+  border-color: hsl(137 49% 21% / var(--tw-border-opacity, 1));
 }
 
 .bg-green{
